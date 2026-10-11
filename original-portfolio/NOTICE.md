@@ -1,0 +1,31 @@
+# Upstream attribution
+
+Original implementation: Shayan Pardis, https://github.com/Shayan-P/Shayan-P.github.io
+
+The upstream package.json declares the ISC license. Retrieved 2026-10-10.
+
+The files src/index.ts, src/visualization.ts, src/tooltip.ts and
+src/concurrancyUtils.ts retain the original implementation. The original
+style.css has been adapted with a neutral dotted background and darker links.
+The data.ts tree-building helpers are also from the original repository.
+Personal content and node pictures have been replaced with Amir Lajevardi's
+information, his portrait, brand logos and original SVG illustrations (see
+/node-art/SOURCES.txt for asset credits). The HTML uses Amir's metadata and omits
+the original author's analytics. Vite and a small browser assertion adapter
+integrate the standalone site into the existing application.
+
+## ISC License
+
+Copyright (c) Shayan Pardis
+
+Permission to use, copy, modify, and/or distribute this software for any purpose
+with or without fee is hereby granted, provided that the above copyright notice
+and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.

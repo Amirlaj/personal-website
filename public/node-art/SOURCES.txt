@@ -1,0 +1,14 @@
+City St George's, University of London logo
+Source: https://blogs.city.ac.uk/city-alumni/wp-content/themes/city-flex-child/images/logo.png
+Official university alumni website: https://blogs.city.ac.uk/city-alumni/
+Downloaded 2026-10-10; unmodified. Used to identify Amir's university.
+The university logo remains the property of its owner; it is not licensed as original portfolio artwork and does not imply endorsement.
+
+Java, Swift, Python, JavaScript, LinkedIn and GitHub logos
+Source: https://github.com/devicons/devicon/tree/master/icons
+Downloaded 2026-10-10. See DEVICON-LICENSE.txt (MIT).
+Logos are displayed with white padding; original artwork is unchanged.
+Brand names and trademarks remain the property of their respective owners.
+
+Other topic illustrations are original SVG line artwork in original-portfolio/src/node-art.ts.
+They illustrate topics/projects, not official project or organisation logos.
