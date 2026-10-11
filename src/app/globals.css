@@ -83,7 +83,7 @@ a:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; border-r
 .personal-links { display: flex; align-items: center; justify-content: flex-start; flex-wrap: nowrap; gap: 36px; margin-bottom: 24px; font-size: 0.9rem; }
 .personal-links a { padding-block: 10px; white-space: nowrap; }
 
-.interactive-page { min-height: 100svh; background: #00d4ff; }
+.interactive-page { min-height: 100svh; background: #edf1ee; }
 .back-home {
   position: fixed;
   z-index: 1;

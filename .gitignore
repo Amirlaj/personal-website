@@ -40,3 +40,9 @@ next-env.d.ts
 /.sites-runtime/
 /outputs/
 /work/
+
+# Generated interactive graph (rebuilt before dev/build)
+/public/original-portfolio/
+
+# Local Cloudflare secrets
+.dev.vars*

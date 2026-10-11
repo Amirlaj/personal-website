@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { profile } from "./portfolio-data";
+import { profile } from "../content/portfolio";
 
 export default function Home() {
   return (

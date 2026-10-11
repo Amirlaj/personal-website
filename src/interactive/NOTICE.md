@@ -4,8 +4,8 @@ Original implementation: Shayan Pardis, https://github.com/Shayan-P/Shayan-P.git
 
 The upstream package.json declares the ISC license. Retrieved 2026-10-10.
 
-The files src/index.ts, src/visualization.ts, src/tooltip.ts and
-src/concurrancyUtils.ts retain the original implementation. The original
+The files index.ts, visualization.ts, tooltip.ts and concurrancyUtils.ts in
+src/interactive/ retain the original implementation. The original
 style.css has been adapted with a neutral dotted background and darker links.
 The data.ts tree-building helpers are also from the original repository.
 Personal content and node pictures have been replaced with Amir Lajevardi's

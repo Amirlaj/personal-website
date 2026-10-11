@@ -14,7 +14,6 @@ export const profile = {
 
 export const projects = [
   {
-    number: "01",
     type: "Hackathon prototype",
     title: "Healthcare AI Assistant",
     description:
@@ -22,7 +21,6 @@ export const projects = [
     tags: ["Node.js", "JavaScript", "Portia SDK", "AI workflows"],
   },
   {
-    number: "02",
     type: "Independent learning",
     title: "iOS Application Collection",
     description:
@@ -30,7 +28,6 @@ export const projects = [
     tags: ["Swift", "SwiftUI", "MVVM", "Combine"],
   },
   {
-    number: "03",
     type: "University coursework",
     title: "2D Physics Game",
     description:

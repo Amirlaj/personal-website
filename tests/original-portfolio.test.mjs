@@ -8,11 +8,11 @@ test("original résumé tree contains Amir's content and valid image nodes", asy
   const result = await build({
     configFile: false,
     logLevel: "error",
-    resolve: { alias: { assert: resolve("original-portfolio/src/browser-assert.ts") } },
+    resolve: { alias: { assert: resolve("src/interactive/browser-assert.ts") } },
     build: {
       write: false,
       minify: false,
-      lib: { entry: resolve("original-portfolio/src/data.ts"), formats: ["es"] },
+      lib: { entry: resolve("src/interactive/data.ts"), formats: ["es"] },
     },
   });
   const output = Array.isArray(result) ? result[0].output : result.output;

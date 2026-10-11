@@ -1,5 +1,5 @@
 import * as assert from "assert";
-import { profile, projects, skills } from "../../app/portfolio-data";
+import { profile, projects, skills } from "../content/portfolio";
 import { artwork } from "./node-art";
 
 type CVInfo = {

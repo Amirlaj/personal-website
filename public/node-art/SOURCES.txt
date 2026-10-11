@@ -10,5 +10,5 @@ Downloaded 2026-10-10. See DEVICON-LICENSE.txt (MIT).
 Logos are displayed with white padding; original artwork is unchanged.
 Brand names and trademarks remain the property of their respective owners.
 
-Other topic illustrations are original SVG line artwork in original-portfolio/src/node-art.ts.
+Other topic illustrations are original SVG line artwork in src/interactive/node-art.ts.
 They illustrate topics/projects, not official project or organisation logos.
