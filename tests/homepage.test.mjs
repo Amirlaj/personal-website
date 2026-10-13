@@ -35,3 +35,17 @@ test("interactive route preserves the original résumé and offers a return link
   assert.match(html, /<iframe[^>]*src="\/original-portfolio\/index\.html"/);
   assert.match(html, /href="\/"[^>]*>← Back to home/);
 });
+
+test("homepage keeps the shorter three-paragraph bio with decorative emojis", async () => {
+  const html = await render("/");
+  const bio = html.match(/<h1>My name is Amir\.<\/h1>([\s\S]*?)<\/div>/)?.[1];
+  assert.ok(bio);
+  assert.equal((bio.match(/<p>/g) ?? []).length, 3);
+  assert.match(bio, /I’m studying Computer Science at/);
+  assert.match(bio, /a healthcare assistant, SwiftUI apps and a 2D physics game/);
+  assert.match(bio, /I’m based in London, and open to internships and collaborative projects/);
+  for (const emoji of ["🎓", "💻", "📍"]) {
+    assert.ok(bio.includes(`<span aria-hidden="true">${emoji}</span>`));
+  }
+  assert.doesNotMatch(bio, /Encode AI Hackathon|tutor GCSE/);
+});

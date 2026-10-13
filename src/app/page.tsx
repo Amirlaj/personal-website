@@ -28,9 +28,9 @@ export default function Home() {
             <Link href="/interactive">old website</Link>
           </nav>
           <h1>My name is Amir.</h1>
-          <p>I’m studying Computer Science at {profile.university}.</p>
-          <p>I build software across web development, iOS and practical AI. My projects include a healthcare assistant, SwiftUI apps and a 2D physics game.</p>
-          <p>I’m based in London, and open to internships and collaborative projects.</p>
+          <p><span aria-hidden="true">🎓</span>{" "}I’m studying Computer Science at {profile.university}.</p>
+          <p><span aria-hidden="true">💻</span>{" "}I build software across web development, iOS and practical AI. My projects include a healthcare assistant, SwiftUI apps and a 2D physics game.</p>
+          <p><span aria-hidden="true">📍</span>{" "}I’m based in London, and open to internships and collaborative projects.</p>
         </div>
       </div>
     </main>
