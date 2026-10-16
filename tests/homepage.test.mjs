@@ -12,7 +12,7 @@ async function render(path) {
   return response.text();
 }
 
-test("homepage groups all five links at the top of the introduction text column", async () => {
+test("homepage groups all four links at the top of the introduction text column", async () => {
   const html = await render("/");
   assert.match(html, /My name is Amir\./);
   assert.match(html, /<img[^>]*src="\/amir-alpine\.png"/);
@@ -21,8 +21,8 @@ test("homepage groups all five links at the top of the introduction text column"
   assert.match(html, /href="\/Amir-Lajevardi-CV\.pdf"/);
   const navigation = html.match(/<nav class="personal-links"[^>]*>([\s\S]*?)<\/nav>/)?.[1];
   assert.ok(navigation);
-  assert.equal((navigation.match(/<a\b/g) ?? []).length, 5);
-  assert.match(navigation, /href="https:\/\/github\.com\/Amirlaj"/);
+  assert.equal((navigation.match(/<a\b/g) ?? []).length, 4);
+  assert.doesNotMatch(navigation, /github/i);
   assert.match(navigation, /href="https:\/\/www\.linkedin\.com\/in\/amirlajevardi\/"/);
   assert.match(navigation, /href="\/interactive"/);
   assert.match(navigation, />old website<\/a>/);

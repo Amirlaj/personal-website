@@ -23,7 +23,6 @@ export default function Home() {
           <nav className="personal-links" aria-label="Contact and résumé">
             <a href={profile.resume} target="_blank" rel="noopener noreferrer">Résumé</a>
             <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            {profile.github && <a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>}
             <a href={`mailto:${profile.email}`}>Email</a>
             <Link href="/interactive">old website</Link>
           </nav>

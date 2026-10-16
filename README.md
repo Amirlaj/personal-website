@@ -1,6 +1,6 @@
 # Amir Lajevardi — Personal Portfolio
 
-A simple introduction page, with a portrait-and-text layout inspired by [Tara Rezaei's website](https://www.tarark.com/), using original markup, styling and Amir's own content. The links above the introduction text include the résumé, LinkedIn, GitHub, email and “old website”. They wrap on small screens. The old website (interactive résumé) opens at `/interactive` and includes education, projects with repository links, skills and experience from the current CV.
+A simple introduction page, with a portrait-and-text layout inspired by [Tara Rezaei's website](https://www.tarark.com/), using original markup, styling and Amir's own content. The links above the introduction text include the résumé, LinkedIn, email and “old website”. They wrap on small screens. The old website (interactive résumé) opens at `/interactive` and includes education, projects with repository links, skills and experience from the current CV.
 
 The interactive résumé uses [Shayan Pardis's original D3 implementation](https://github.com/Shayan-P/Shayan-P.github.io), under its ISC license. It lives in `src/interactive/` and is built into `public/original-portfolio/`. The `/interactive` page embeds it full-screen so its original styles and behavior remain isolated, with a link back to the homepage.
 
