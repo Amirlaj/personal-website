@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Amir Lajevardi — Computer Science Student & Developer",
   description:
-    "Portfolio of Amir Lajevardi, a Computer Science student and developer based in London, working across software, iOS and AI.",
+    "Portfolio of Amir Lajevardi, a Computer Science student at City St George’s, University of London, building backend systems, compilers and iOS apps.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Amir Lajevardi — Computer Science Student & Developer",
     description:
-      "Software, iOS and AI projects by a Computer Science student based in London.",
+      "Backend systems, compilers and iOS apps by a Computer Science student based in London.",
     type: "website",
     images: [
       {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Amir Lajevardi — Computer Science Student & Developer",
     description:
-      "Software, iOS and AI projects by a Computer Science student based in London.",
+      "Backend systems, compilers and iOS apps by a Computer Science student based in London.",
     images: ["/og.png"],
   },
 };

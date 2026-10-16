@@ -80,7 +80,7 @@ a:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; border-r
 .introduction-copy h1 { margin-bottom: 25px; }
 .introduction-copy p + p { margin-top: 25px; }
 
-.personal-links { display: flex; align-items: center; justify-content: flex-start; flex-wrap: nowrap; gap: 36px; margin-bottom: 24px; font-size: 0.9rem; }
+.personal-links { display: flex; align-items: center; justify-content: flex-start; flex-wrap: wrap; gap: 0 24px; margin-bottom: 24px; font-size: 0.9rem; }
 .personal-links a { padding-block: 10px; white-space: nowrap; }
 
 .interactive-page { min-height: 100svh; background: #edf1ee; }

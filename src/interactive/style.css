@@ -42,12 +42,19 @@ body{
 }
 
 .d3-tip {
-    line-height: 1;
-    color: black;
-    border: 1px solid gray;
+    font: 14px/1.5 system-ui, sans-serif;
+    color: #263b30;
+    border: 1px solid #bac9c0;
     border-radius: 5px;
-    padding: 10px;
-    background-color: rgba(220, 220, 220, 0.85);
-    max-width: 30vw;
-    text-wrap: inherit;
+    padding: 14px;
+    background-color: rgba(250, 252, 250, 0.97);
+    width: max-content;
+    max-width: min(340px, calc(100vw - 32px));
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
+    overflow-wrap: anywhere;
 }
+
+.d3-tip p { margin: 10px 0; }
+.d3-tip p:last-child { margin-bottom: 0; }
+.d3-tip a { color: #245b43; text-underline-offset: 3px; }

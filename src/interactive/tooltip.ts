@@ -30,8 +30,9 @@ export class Tooltip {
 
         selected.innerHTML = this.data
 
-        let top = this.by - selected.clientHeight < 0 ? 0 : this.by - selected.clientHeight;
-        let left = this.bx - selected.clientWidth / 2 < 0 ? 0 : this.bx - selected.clientWidth / 2;
+        const margin = 16;
+        const top = Math.max(margin, Math.min(this.by - selected.offsetHeight, window.innerHeight - selected.offsetHeight - margin));
+        const left = Math.max(margin, Math.min(this.bx - selected.offsetWidth / 2, window.innerWidth - selected.offsetWidth - margin));
 
         select(this.node)
             .style('top', top + 'px')

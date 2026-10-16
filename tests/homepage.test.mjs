@@ -12,16 +12,18 @@ async function render(path) {
   return response.text();
 }
 
-test("homepage groups all four links at the top of the introduction text column", async () => {
+test("homepage groups all five links at the top of the introduction text column", async () => {
   const html = await render("/");
   assert.match(html, /My name is Amir\./);
   assert.match(html, /<img[^>]*src="\/amir-alpine\.png"/);
   assert.doesNotMatch(html, /class="portrait-placeholder"/);
-  assert.match(html, /mailto:amir\.lajevardi04@gmail\.com/);
+  assert.match(html, /mailto:amir\.lajevardi84@gmail\.com/);
   assert.match(html, /href="\/Amir-Lajevardi-CV\.pdf"/);
   const navigation = html.match(/<nav class="personal-links"[^>]*>([\s\S]*?)<\/nav>/)?.[1];
   assert.ok(navigation);
-  assert.equal((navigation.match(/<a\b/g) ?? []).length, 4);
+  assert.equal((navigation.match(/<a\b/g) ?? []).length, 5);
+  assert.match(navigation, /href="https:\/\/github\.com\/Amirlaj"/);
+  assert.match(navigation, /href="https:\/\/www\.linkedin\.com\/in\/amirlajevardi\/"/);
   assert.match(navigation, /href="\/interactive"/);
   assert.match(navigation, />old website<\/a>/);
   assert.match(html, /<div class="introduction-copy"><nav class="personal-links"/);
@@ -42,7 +44,8 @@ test("homepage keeps the shorter three-paragraph bio with decorative emojis", as
   assert.ok(bio);
   assert.equal((bio.match(/<p>/g) ?? []).length, 3);
   assert.match(bio, /I’m studying Computer Science at/);
-  assert.match(bio, /a healthcare assistant, SwiftUI apps and a 2D physics game/);
+  assert.match(bio, /City St George’s, University of London/);
+  assert.match(bio, /a compiler, a pharmacy ordering system and a cryptocurrency tracker/);
   assert.match(bio, /I’m based in London, and open to internships and collaborative projects/);
   for (const emoji of ["🎓", "💻", "📍"]) {
     assert.ok(bio.includes(`<span aria-hidden="true">${emoji}</span>`));

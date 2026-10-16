@@ -1,5 +1,5 @@
 import * as assert from "assert";
-import { profile, projects, skills } from "../content/portfolio";
+import { experience, profile, projects, skills } from "../content/portfolio";
 import { artwork } from "./node-art";
 
 type CVInfo = {
@@ -73,24 +73,37 @@ addItem({
 }, rootItem);
 
 const education = addItem({
-    description: `<strong>${escapeHtml(profile.university)}</strong><br>${escapeHtml(profile.degree)}<br>${escapeHtml(profile.years)} · London, United Kingdom`,
-    picture: artwork.city,
+    description: "Education in Computer Science, with a scholarship for my one-year A-level programme.",
+    picture: artwork.education,
 }, rootItem);
 
 addItem({
-    description: "Computer Science coursework: algorithms, Java, databases, systems architecture and operating systems.",
+    description: `<strong>${escapeHtml(profile.university)}</strong><br>${escapeHtml(profile.degree)}<br>${escapeHtml(profile.years)}<p>${escapeHtml(profile.academicProgress)}</p>`,
+    picture: artwork.city,
+}, education);
+
+addItem({
+    description: "<strong>Collingham College</strong><br>Aug 2023 – May 2024<p>One-year A-level programme; awarded a scholarship.</p>",
     picture: artwork.computer,
 }, education);
 
 const projectNode = addItem({
-    description: "Projects from hackathons, independent learning and university coursework.",
+    description: "Recent projects in compilers, backend systems, iOS, networking and games. Explore a project for details and its repository.",
     picture: artwork.projects,
 }, rootItem);
 
-projects.forEach((project, index) => {
+const projectPictures: Record<string, string> = {
+    compiler: artwork.compiler,
+    pharmacy: artwork.healthcare,
+    crypto: artwork.ios,
+    networks: artwork.networks,
+    game: artwork.game,
+};
+
+projects.forEach((project) => {
     addItem({
-        description: `<strong>${escapeHtml(project.title)}</strong><br>${escapeHtml(project.type)}<p>${escapeHtml(project.description)}</p>${project.tags.map(escapeHtml).join(" · ")}`,
-        picture: [artwork.healthcare, artwork.ios, artwork.game][index] ?? artwork.projects,
+        description: `<strong>${escapeHtml(project.title)}</strong><br>${escapeHtml(project.type)} · ${escapeHtml(project.dates)}<p>${escapeHtml(project.description)}</p>${project.tags.map(escapeHtml).join(" · ")}<p><a href="${escapeHtml(project.repository)}" target="_blank" rel="noopener noreferrer">View repository ↗</a></p>`,
+        picture: projectPictures[project.id] ?? artwork.projects,
     }, projectNode);
 });
 
@@ -99,24 +112,38 @@ const skillNode = addItem({
     picture: artwork.skills,
 }, rootItem);
 
-for (const [label, picture] of [["Java", artwork.java], ["Swift", artwork.swift], ["Python", artwork.python], ["SQL", artwork.sql], ["JavaScript", artwork.javascript]]) {
-    addItem({ picture, description: label === "JavaScript" ? "JavaScript · Node.js · Web development" : label }, skillNode);
+for (const [description, picture] of [
+    ["Java · Spring Boot · REST APIs · JWT authentication · Role-based access control", artwork.java],
+    ["Swift · SwiftUI · MVVM · Combine · Core Data · TestFlight", artwork.swift],
+    ["SQL · Schema design · Entity–relationship modelling", artwork.sql],
+    ["JavaScript · Node.js · Express · MongoDB", artwork.javascript],
+    ["Testing and collaboration · JUnit · Mockito · Git · GitHub", artwork.testing],
+]) {
+    addItem({ picture, description }, skillNode);
 }
 
-const experience = addItem({
+const experienceNode = addItem({
     picture: artwork.experience,
-    description: "Experience in teaching, teamwork, project coordination and UI development.",
+    description: "Software engineering, hackathons, tutoring and open-source contributions.",
 }, rootItem);
 
-addItem({
-    picture: artwork.tutoring,
-    description: "<strong>Private Mathematics &amp; Physics Tutor</strong><br>London · Ongoing<p>Helping GCSE and A-Level students understand difficult concepts, build confidence and improve their problem-solving skills.</p>",
-}, experience);
+const experiencePictures: Record<string, string> = {
+    internship: artwork.geometry,
+    hackathon: artwork.hackathon,
+    tutoring: artwork.tutoring,
+};
+
+experience.forEach((entry) => {
+    addItem({
+        picture: experiencePictures[entry.id] ?? artwork.experience,
+        description: `<strong>${escapeHtml(entry.title)}</strong><br>${escapeHtml(entry.dates)} · ${escapeHtml(entry.location)}<p>${escapeHtml(entry.description)}</p>`,
+    }, experienceNode);
+});
 
 addItem({
-    picture: artwork.hackathon,
-    description: "<strong>Encode AI Hackathon</strong><br>Project Manager &amp; UI Developer<p>Worked with a small team to prototype an AI healthcare assistant, contributing to project coordination and the user interface.</p>",
-}, experience);
+    picture: artwork.opensource,
+    description: "<strong>Open-source contributions</strong><p>Contributed to cURL, the command-line tool and library for transferring data over URLs.</p>",
+}, experienceNode);
 
 const social = addItem({
     picture: artwork.contact,

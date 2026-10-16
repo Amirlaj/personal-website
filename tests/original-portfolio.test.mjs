@@ -27,10 +27,10 @@ test("original résumé tree contains Amir's content and valid image nodes", asy
     }
   }
   walk(getTree());
-  assert.equal(nodes.length, 20);
+  assert.equal(nodes.length, 26);
   assert.equal(nodes[0].picture, "/amir-portrait.jpeg");
   assert.ok(existsSync(`public${nodes[0].picture}`));
-  assert.equal(nodes.find(node => node.description.includes("BEng Computer Science")).picture, "/node-art/city-logo.png");
+  assert.equal(nodes.find(node => node.description.includes("BSc Computer Science")).picture, "/node-art/city-logo.png");
   assert.equal(new Set(nodes.map(node => node.picture)).size, nodes.length);
   for (const node of nodes) {
     if (node.picture.startsWith("/")) {
@@ -45,10 +45,17 @@ test("original résumé tree contains Amir's content and valid image nodes", asy
     assert.ok(node.relDistance > 0 && node.relSize > 0);
   }
   const descriptions = nodes.map((node) => node.description).join(" ");
-  for (const text of ["Amir Lajevardi", "amir.lajevardi04@gmail.com", "Amir-Lajevardi-CV.pdf", "Healthcare AI Assistant", "linkedin.com/in/a-lajevardi"]) {
+  for (const text of [
+    "Amir Lajevardi", "amir.lajevardi84@gmail.com", "Amir-Lajevardi-CV.pdf",
+    "LPL26 Compiler", "InfoPharma Ordering System", "iOS Cryptocurrency App",
+    "Computer Networks", "2D Java Game", "Software Engineering Intern", "ETHGlobal",
+    "Uniswap Foundation", "Mathematics &amp; Computer Science", "cURL", "Collingham College",
+    "Sep 2024 – Oct 2025", "linkedin.com/in/amirlajevardi/", "github.com/Amirlaj",
+  ]) {
     assert.ok(descriptions.includes(text), text);
   }
-  assert.doesNotMatch(descriptions, /shayan|mit\.edu|sharif/i);
+  assert.equal((descriptions.match(/>View repository ↗<\/a>/g) ?? []).length, 5);
+  assert.doesNotMatch(descriptions, /shayan|mit\.edu|sharif|Healthcare AI Assistant|Encode AI Hackathon|Ongoing|BEng/i);
   assert.ok(existsSync("public/Amir-Lajevardi-CV.pdf"));
 });
 

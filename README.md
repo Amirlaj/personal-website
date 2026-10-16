@@ -1,6 +1,6 @@
 # Amir Lajevardi — Personal Portfolio
 
-A simple introduction page, with a portrait-and-text layout inspired by [Tara Rezaei's website](https://www.tarark.com/), using original markup, styling and Amir's own content. A single row above the introduction text contains the résumé, LinkedIn, email and “old website” links. The old website (interactive résumé) opens at `/interactive`.
+A simple introduction page, with a portrait-and-text layout inspired by [Tara Rezaei's website](https://www.tarark.com/), using original markup, styling and Amir's own content. The links above the introduction text include the résumé, LinkedIn, GitHub, email and “old website”. They wrap on small screens. The old website (interactive résumé) opens at `/interactive` and includes education, projects with repository links, skills and experience from the current CV.
 
 The interactive résumé uses [Shayan Pardis's original D3 implementation](https://github.com/Shayan-P/Shayan-P.github.io), under its ISC license. It lives in `src/interactive/` and is built into `public/original-portfolio/`. The `/interactive` page embeds it full-screen so its original styles and behavior remain isolated, with a link back to the homepage.
 
@@ -97,7 +97,7 @@ References: [Workers build settings](https://developers.cloudflare.com/workers/c
 
 ## Update the content
 
-- Personal details, projects and links: `src/content/portfolio.ts`
+- Personal details, projects, experience and links: `src/content/portfolio.ts`
 - Homepage introduction: `src/app/page.tsx`
 - Homepage styling: `src/app/globals.css`
 - Homepage portrait: put a photo in `public/` and set `profile.portrait` to its URL (e.g. `/amir.jpg`); initials are shown until then
@@ -109,7 +109,7 @@ References: [Workers build settings](https://developers.cloudflare.com/workers/c
 - Page title and sharing information: `src/app/layout.tsx`
 - Résumé download: `public/Amir-Lajevardi-CV.pdf`
 
-The GitHub profile URL is currently empty and is not displayed. Setting `profile.github` adds it to the contact branch automatically. The central node uses `/amir-portrait.jpeg`, independently of the homepage photo; change `rootItem.picture` to use another photo.
+The homepage and interactive résumé share the contact details in `profile`. Project repositories and experience entries also come from the shared content file. The central node uses `/amir-portrait.jpeg`, independently of the homepage photo; change `rootItem.picture` to use another photo.
 
 The original author's personal content, photographs, and analytics are not used. See `src/interactive/NOTICE.md` for attribution, license and integration notes. The original interaction model is preserved, including hover-based tooltips; this is not a separate accessibility redesign.
 
